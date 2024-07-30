@@ -35,10 +35,30 @@ pipeline {
             }
         }
 
-        stage('Run tests') {
+        stage('Run TestProject1 tests') {
             steps {
-                // Run tests using the solution file
-                bat 'dotnet test SeleniumBasicExercise.sln --logger "trx;LogFileName=TestResults.trx"'
+                bat '''
+                echo "Running TestProject1 tests"
+                dotnet test TestProject1/TestProject1.csproj --verbosity normal "trx;LogFileName=TestResults.trx"
+                '''
+            }
+        }
+
+        stage('Run TestProject2 tests') {
+            steps {
+                bat '''
+                echo "Running TestProject2 tests"
+                dotnet test TestProject2/TestProject2.csproj --verbosity normal "trx;LogFileName=TestResults.trx"
+                '''
+            }
+        }
+
+        stage('Run TestProject3 tests') {
+            steps {
+                bat '''
+                echo "Running TestProject3 tests"
+                dotnet test TestProject3/TestProject3.csproj --verbosity normal "trx;LogFileName=TestResults.trx"
+                '''
             }
         }
     }
