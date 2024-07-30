@@ -39,7 +39,7 @@ pipeline {
             steps {
                 bat '''
                 echo "Running TestProject1 tests"
-                dotnet test TestProject1/TestProject1.csproj --verbosity normal "trx;LogFileName=TestResults.trx"
+                dotnet test TestProject1/TestProject1.csproj --logger "trx;LogFileName=TestResults.trx"
                 '''
             }
         }
@@ -48,7 +48,7 @@ pipeline {
             steps {
                 bat '''
                 echo "Running TestProject2 tests"
-                dotnet test TestProject2/TestProject2.csproj --verbosity normal "trx;LogFileName=TestResults.trx"
+                dotnet test TestProject2/TestProject2.csproj --logger "trx;LogFileName=TestResults.trx"
                 '''
             }
         }
@@ -57,7 +57,7 @@ pipeline {
             steps {
                 bat '''
                 echo "Running TestProject3 tests"
-                dotnet test TestProject3/TestProject3.csproj --verbosity normal "trx;LogFileName=TestResults.trx"
+                dotnet test TestProject3/TestProject3.csproj --logger "trx;LogFileName=TestResults.trx"
                 '''
             }
         }
